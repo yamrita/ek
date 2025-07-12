@@ -1,10 +1,50 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	#app {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+}
+.theme-light {
+	background-color: #f0f0f0;
+	color: #000;
+	padding: 1rem;
+}
+.theme-dark {
+	background-color: #333;
+	color: #fff;
+	padding: 1rem;
 }
 
 .container {
-  font-size: 3rem;
-  margin: auto;
-  max-width: 800px;
-  margin-top: 20px;
+	margin: 0;
+	padding: 1rem;
+	max-width: 800px;
+	margin-top: 20px;
+
+	&.theme-dark {
+		background-color: #444;
+		color: #fff;
+	}
+	button {
+		margin: 0 0.5rem;
+	}
+
+	.btn-counter {
+		margin: 0 1rem;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+	}
+	ul {
+		* {
+			margin: 0.2rem;
+		}
+		list-style: none;
+	}
 }
