@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import {ThemeProvider, useTheme} from "./ThemeProvider";
 
 const ThemeToggler = () => {
@@ -26,6 +26,11 @@ const App = () => {
 	const [users, setUsers] = useState([]);
 	const [loading, setLoading] = useState(true);
 
+	const computeFactorial = (n: number): number => {
+		if (n <= 1) return 1;
+		return n * computeFactorial(n - 1);
+	};
+	const factorial = useMemo(() => computeFactorial(value), [value]);
 	const handleTaskInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTaskInput(e.target.value);
 	};
@@ -48,6 +53,12 @@ const App = () => {
 	return (
 		<ThemeProvider>
 			<div className={`container`}>
+				<section>
+					<h1>5</h1>
+					<h2>
+						Factorial of {value} is {factorial}
+					</h2>
+				</section>
 				<section>
 					<h1>4</h1>
 					<ThemeMaster />
